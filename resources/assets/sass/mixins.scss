@@ -1,0 +1,41 @@
+@mixin transition($property) {
+	$val: $property $common-transition;
+	transition: $val;
+    -webkit-transition: $val;
+}
+
+@mixin transform($property, $value) {
+	$property-with-value: $property($value);
+
+    -ms-transform: $property-with-value; /* IE 9 */
+    -webkit-transform: $property-with-value; /* Chrome, Safari, Opera */
+    transform: $property-with-value;
+}
+
+@mixin opacity($val) {
+	opacity: $val;
+    filter: Alpha(opacity=$val*100); /* IE8 and earlier */
+}
+
+@mixin placeholder($color) {
+	&::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+	  color: $color;
+	}
+	&::-moz-placeholder { /* Firefox 19+ */
+	  color: $color;
+	}
+	&:-ms-input-placeholder { /* IE 10+ */
+	  color: $color;
+	}
+	&:-moz-placeholder { /* Firefox 18- */
+	  color: $color;
+	}
+}
+
+@mixin bg-pic {
+	background: url(../img/hot_coffee_cup_and_newspaper.jpg) no-repeat;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
