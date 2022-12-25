@@ -1,12 +1,11 @@
 $(document).ready(function() {
 	$('.search-cat-button').click(
 		function(){
-			var searchCatMenu = $(this).next('.search-cat-menu');
-			var searchCat = searchCatMenu.parent('.search-cat');
+			let searchCatMenu = $(this).next('.search-cat-menu');
 
 			if (searchCatMenu.css('visibility') === 'hidden'){
 				searchCatMenu.css('visibility', 'visible')
-			}else{
+			} else {
 				searchCatMenu.css('visibility', 'hidden')
 			}
 		}
@@ -14,10 +13,10 @@ $(document).ready(function() {
 
 	$('.search-cat-menu>li').click(
 		function(){
-			var selImg = $('> img',this).attr('src');
-			var catId = $('> img',this).attr('value');
-			var searchCatMenu = $(this).parent('.search-cat-menu');
-			var searchCat = searchCatMenu.parent('.search-cat');
+			let selImg = $('> img',this).attr('src');
+			let catId = $('> img',this).attr('value');
+			let searchCatMenu = $(this).parent('.search-cat-menu');
+			let searchCat = searchCatMenu.parent('.search-cat');
 
 			searchCat.children('input.search-cat-val').val(catId);
 			searchCatMenu.prev('.search-cat-button').children('.search-cat-button>img:first-child').attr('src', selImg);
